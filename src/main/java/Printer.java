@@ -26,8 +26,10 @@ public class Printer {
 
     public int print(int pages, int copies) {
         int totalSheets = pages * copies;
-        sheets -= totalSheets;
-        toner -= totalSheets;
+        if (this.sheets > totalSheets) {
+            sheets -= totalSheets;
+            toner -= totalSheets;
+        }
         return totalSheets;
     }
 
